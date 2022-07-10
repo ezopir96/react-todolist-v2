@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.list-content {
+  width: 100%;
+}
+
+/* 刚进场时的样式 */
+.fade-enter {
+  opacity: 0;
+}
+
+/* 进场过程中 从0到1过程中 */
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+/* 进场完毕 */
+/* .fade-enter-done{
+  opacity: 1;
+} */
+
+/* 出场开始时 从1到0 */
+.fade-exit {
+  opacity: 1;
+}
+
+/* 出场过程中 从1到0过程中 */
+.fade-exit-active {
+  opacity: .5;
+  transition: opacity 300ms;
+}
+/* 退场完毕 */
+.fade-exit-done{
+  opacity: 0;
+}

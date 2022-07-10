@@ -1,0 +1,34 @@
+.loginForm > label {
+  color: white;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm > input {
+  width: 29.75rem;
+  height: 3.125rem;
+  background-color: rgb(192, 192, 192);
+  padding-left: 0.625rem;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: .25rem;
+}
+
+.loginForm > input:focus {
+  background-color: #fff;
+}
+
+.loginForm > button {
+  margin-top: .5rem;
+  height: 3.125rem;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  background-color: rgb(255, 60, 0);
+  border-radius: .25rem;
+  box-shadow: .1875rem .1875rem;
+}
