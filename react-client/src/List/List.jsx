@@ -38,7 +38,8 @@ class List extends React.Component {
   }
 
   state = {
-    todos: store.getState().todolist.todos
+    todos: store.getState().todolist.todos,
+    userInfo: store.getState().user.userInfo
   }
 
   clear () {}
@@ -90,12 +91,13 @@ class List extends React.Component {
   }
   componentDidMount () {
     const todos = []
-    const userInfo = localStorage.getItem('user_info') ? JSON.parse(localStorage.getItem('user_info')).userid : ''
+    const userid = localStorage.getItem('user_info') ? JSON.parse(localStorage.getItem('user_info')).userid : ''
+    console.log(userid)
     const token = localStorage.getItem('todo_token') || ''
-    if (userInfo) {
+    if (userid) {
       axios({
         method: 'GET',
-        url: `http://localhost:8080/lists/getlist/${userInfo.userid}`,
+        url: `http://localhost:8080/lists/getlist/${userid}`,
         headers: { authorization: token }
       })
       .then((result, err) => {
@@ -110,6 +112,7 @@ class List extends React.Component {
     }
     this.clear = store.subscribe(() => {
       this.setState({ todos: store.getState().todolist.todos })
+      this.setState({ userInfo: store.getState().user.userInfo })
     })
 
     // 绑定事件总线处理函数

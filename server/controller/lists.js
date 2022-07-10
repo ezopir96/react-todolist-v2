@@ -1,17 +1,20 @@
 const fs = require('fs')
 const getList = (req, res) => {
-  const userid = req.params.userid || req.body.userid
+  console.log(req.params)
+  console.log(req.body)
+  const userid = req.params.userid
   console.log('收到请求', userid)
+  if (userid === 'undefined') res.send({ code: 202, message: '没收到用户id', data: [] })
   
   const allList = JSON.parse(fs.readFileSync('db/db.json', 'utf-8'))
 
-  allList.filter(item => {
+  const resList = allList.filter(item => {
     return item.userid === userid
   })
   res.send({
     code: 201,
     message: '收到列表请求',
-    data: allList
+    data: resList
   })
 }
 

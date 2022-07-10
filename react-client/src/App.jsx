@@ -7,6 +7,7 @@ import Register from './components/users/Register'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
 import './app_animate.css'
 import { connect } from 'react-redux'
+import store from './store'
 
 @withRouter
 class App extends React.Component {
@@ -26,7 +27,6 @@ class App extends React.Component {
 
   render () {
     const nickname = localStorage.getItem('user_info') ? JSON.parse(localStorage.getItem('user_info')).nickname : undefined
-    console.log(this.props.userInfo)
     return (
       <>
         <div className="Header_div">

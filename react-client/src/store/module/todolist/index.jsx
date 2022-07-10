@@ -16,7 +16,8 @@ const reducer = (prevState = initialState, action) => {
     case TOGGLE_TODOITEM_TYPE:
       const { checkState, id } = action.payload
       state.todos.forEach((item) => {
-        if (item.lid === id) item.isFinished = checkState
+        console.log(item.lid === id)
+        if (item.lid === id) item.isFinished = !checkState
       })
       break;
     case SELALL_TODOITEM_TYPE:

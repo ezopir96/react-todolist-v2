@@ -32,6 +32,7 @@ class Login extends React.Component {
       localStorage.setItem('todo_token', result.data.token)
 
       // 存储到 redux 状态中 🐋🐋🐋
+      console.log(userInfo)
       this.props.login(userInfo)
       this.props.history.push({
         pathname: '/lists'

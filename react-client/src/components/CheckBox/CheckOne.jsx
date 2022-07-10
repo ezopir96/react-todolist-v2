@@ -42,7 +42,6 @@ class CheckBox extends React.Component {
         headers: { authorization: token }
       })
       .then((result, err) => {
-        console.log(result.data)
         store.dispatch(actions.toggleItem(e.target.checked, id))
       })
       .catch(err => {
